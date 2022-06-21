@@ -26,10 +26,9 @@ def combine_csv_source_ip(path):
 
         print("Final Dataframe")
         print(final_df.sort_values('Source IP'))
-        temp_combined_csv = path + "\\TempCombined.csv"
-        if os.path.exists(temp_combined_csv):
-            os.remove(temp_combined_csv)
-            final_df.sort_values('Source IP').to_csv(temp_combined_csv, index=False)
+        if os.path.exists(combined_csv):
+            os.remove(combined_csv)
+            final_df.sort_values('Source IP').to_csv(combined_csv, index=False)
     else:
         print("Give the valid path of directory")
 
